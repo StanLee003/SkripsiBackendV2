@@ -39,7 +39,7 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/messages', messageRoutes);
 
 // Menjalankan Server
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT;
 server.listen(PORT, () => {
-  console.log(`🚀 Server berjalan di http://localhost:${PORT}`);
+  console.log(`🚀 Server berjalan di port ${PORT}`);
 });
