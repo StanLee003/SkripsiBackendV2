@@ -8,7 +8,7 @@ exports.translateText = async (text, targetLanguage) => {
         console.log(`[TRANSLATE] "${text}" → ${targetLanguage}`); // ✅ log awal
 
         const response = await openai.chat.completions.create({
-            model: "gpt-4o",
+            model: "gpt-4.1",
             messages: [
                 { 
                     role: "system", 
