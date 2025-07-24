@@ -169,3 +169,11 @@ exports.getSentRequests = async (uid) => {
     });
     return users;
 };
+
+exports.findUserByUsername = async (username) => {
+    const snapshot = await usersCollection.where('username', '==', username).limit(1).get();
+    if (snapshot.empty) {
+        return null;
+    }
+    return snapshot.docs[0].data();
+};
