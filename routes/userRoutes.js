@@ -37,4 +37,6 @@ router.post('/:uid/avatar', upload.single('avatar'), userController.uploadAvatar
 // List chat yang sudah pernah melakukan percakapan
 router.get('/:uid/chats', userController.getUserChatList);
 
+router.post('/check-username', authController.checkUsername);
+
 module.exports = router;
