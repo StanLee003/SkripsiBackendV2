@@ -216,16 +216,3 @@ exports.getUserChatList = async (req, res) => {
         res.status(500).json({ message: "Gagal mengambil chat list.", error: err.message });
     }
 };
-
-exports.checkUsername = async (req, res) => {
-  const { username } = req.body;
-  if (!username) {
-    return res.status(400).json({ exists: false, message: 'Username required' });
-  }
-  try {
-    const found = await userModel.findUserByUsername(username);
-    return res.json({ exists: !!found });
-  } catch (err) {
-    return res.status(500).json({ exists: false, message: 'Server error' });
-  }
-};
