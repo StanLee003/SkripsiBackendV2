@@ -74,7 +74,7 @@ exports.getUserProfile = async (req, res) => {
                 displayName: user.displayName, 
                 username: user.username,
                 languagePreference: user.languagePreference,
-                systemLanguage: user.systemLanguage
+                systemLanguage: user.systemLanguage,
                 photoURL: user.photoURL,
                 isAdmin: user.isAdmin
             });
