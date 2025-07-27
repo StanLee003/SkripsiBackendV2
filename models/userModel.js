@@ -5,14 +5,15 @@ const { FieldValue } = require('firebase-admin/firestore');
 
 const usersCollection = db.collection('users');
 
-exports.createUser = async (uid, email, displayName, username) => {
+exports.createUser = async (uid, email, displayName, username, systemLanguage = 'en') => {
   const newUser = {
     uid,
     email,
     displayName,
-    username, // Menggunakan username
+    username,
     photoURL: '',
-    languagePreference: 'en', // Bahasa default
+    languagePreference: 'en',    
+    systemLanguage: 'en',              
     contacts: [],
     isAdmin: false,
     createdAt: new Date(),
