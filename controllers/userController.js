@@ -130,11 +130,12 @@ exports.addContact = async (req, res) => {
 
 exports.updateProfile = async (req, res) => {
     const { uid } = req.params; 
-    const { displayName, languagePreference, photoURL } = req.body;
+    const { displayName, languagePreference, photoURL, systemLanguage } = req.body;
 
     const dataToUpdate = {};
     if (displayName) dataToUpdate.displayName = displayName;
     if (languagePreference) dataToUpdate.languagePreference = languagePreference;
+    if (languagePreference) dataToUpdate.systemLanguage = systemLanguage;
     if (photoURL) dataToUpdate.photoURL = photoURL; // Tambahkan photoURL jika ada
 
     if (Object.keys(dataToUpdate).length === 0) {
