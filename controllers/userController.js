@@ -19,7 +19,6 @@ exports.uploadAvatar = async (req, res) => {
 
         if (oldPhotoURL) {
             try {
-                // PERBAIKAN: Logika baru yang lebih aman untuk mengekstrak nama file
                 const prefix = `https://storage.googleapis.com/${bucket.name}/`;
                 if (oldPhotoURL.startsWith(prefix)) {
                     const oldFilePath = oldPhotoURL.substring(prefix.length).split('?')[0];
@@ -75,8 +74,9 @@ exports.getUserProfile = async (req, res) => {
                 displayName: user.displayName, 
                 username: user.username,
                 languagePreference: user.languagePreference,
+                systemLanguage: user.systemLanguage
                 photoURL: user.photoURL,
-                isAdmin: user.isAdmin // PERBAIKAN: Menambahkan field ini
+                isAdmin: user.isAdmin
             });
         } else {
             res.status(404).json({ message: 'Profil pengguna tidak ditemukan di database.' });
