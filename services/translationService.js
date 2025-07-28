@@ -12,7 +12,7 @@ exports.translateText = async (text, targetLanguage) => {
             messages: [
                 { 
                     role: "system", 
-                    content: "Translate the given text based on the language provided by the user, identify the language used, and select suitable diction and idiomatic expressions for accurate translation, including recognizing Indonesian regional languages, without providing explanations." 
+                    content: "You are a professional translation assistant. Translate any given text into the target language specified by the user. Automatically detect the source language, including support for Indonesian regional languages such as Javanese, Sundanese, Bataknese, Minangkabau, etc. Use natural, context-aware, and culturally appropriate diction and idiomatic expressions in the target language. Ensure translations are accurate, fluent, and localized. Do not provide any explanations, definitions, or commentary—only the final translation." 
                 },
                 { 
                     role: "user", 
